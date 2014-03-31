@@ -1,0 +1,415 @@
+set $c1 #1bcc66
+set $c2 #53cd2e
+set $c3 #9df00f
+set $c4 #44d742
+set $c5 #ceef3b
+set $c6 #ef8cc0
+set $c7 #74965a
+set $c8 #e49fe4
+set $c9 #e1dc25
+set $c10 #14555e
+set $c11 #149e01
+set $c12 #311fcc
+
+exec xscreensaver
+exec xcompmgr -cn
+exec /home/x0170753/bin/chwall.sh
+exec /home/x0170753/bin/reins.sh
+exec urxvtd -q -o -f
+exec xset r rate 175
+exec xset b 10
+exec setxkbmap -layout us,ru,ua -variant -option grp:caps_toggle
+exec sudo update-manager
+exec reins.sh
+#exec_always colorize.sh
+
+# font for window titles. ISO 10646 = Unicode
+font -xos4-Terminus-bold-r-normal-*-17-120-100-100-C-*-iso10646-1
+
+# Set modifiers
+
+# Alt key
+set $m Mod4
+# Windows  key
+set $m2 Mod1
+
+# use Mouse+$m2 to drag floating windows to their wanted position
+floating_modifier $m2
+new_window 1pixel
+hide_edge_borders vertical
+default_orientation auto
+
+# PRIMARY <- -> SECONDARY exchanger
+bindsym Control+space exec /usr/bin/xsel --exchange
+
+# start a terminal
+bindsym $m2+Return exec ~/bin/urxc
+bindsym $m+Return exec ~/bin/urxc -e /bin/bash
+
+set $dir ~/bin
+#bindsym $m2+Shift+Return exec ~/bin/urxvt_indir.sh
+#bindsym $m2+Shift+Return exec ud $PWD
+
+# kill focused window
+bindsym $m2+Shift+q kill
+# lock screen
+
+# start dmenu (a program launcher)
+bindsym $m2+d exec /usr/bin/dmenu_run -fn -xos4-terminus-bold-r-normal--32-320-72-72-c-160-koi8-r
+# start surf
+
+bindsym $m2+Shift+s exec ~/bin/surf-google-search.sh
+
+# changing border style
+bindsym $m2+t border normal
+bindsym $m2+y border 1pixel
+bindsym $m2+u border none
+
+# change focus
+bindsym $m2+h focus left
+bindsym $m2+j focus down
+bindsym $m2+k focus up
+bindsym $m2+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $m2+Left focus left
+bindsym $m2+Down focus down
+bindsym $m2+Up focus up
+bindsym $m2+Right focus right
+
+# move focused window
+bindsym $m2+Shift+h move left
+bindsym $m2+Shift+j move down
+bindsym $m2+Shift+k move up
+bindsym $m2+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $m2+Shift+Left move left
+bindsym $m2+Shift+Down move down
+bindsym $m2+Shift+Up move up
+bindsym $m2+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $m2+g split h
+
+# split in vertical orientation
+bindsym $m2+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $m2+Control+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $m2+s layout stacking
+bindsym $m2+w layout tabbed
+bindsym $m2+e layout default
+
+# toggle tiling / floating
+bindsym $m2+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $m2+space focus mode_toggle
+
+# focus the parent container
+bindsym $m2+a focus parent
+
+# focus the child container
+#bindsym $m2+d focus child
+
+# Make the currently focused window a scratchpad
+bindsym $m2+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $m2+minus scratchpad show
+
+# Switching workspaces shortcuts
+    bindsym $m+Control+1 workspace number 10
+    bindsym $m+Control+Shift+1 move workspace number 10
+    bindsym $m+$m2+Control+1 workspace number 11
+    bindsym $m+$m2+Control+Shift+1 move workspace number 11
+    bindsym $m2+Control+1 workspace number 12
+    bindsym $m2+Control+Shift+1 move workspace number 12
+    bindsym $m2+1 workspace number 13
+    bindsym $m2+Shift+1 move workspace number 13
+    bindsym $m+$m2+1 workspace number 14
+    bindsym $m+$m2+Shift+1 move workspace number 14
+    bindsym $m+1 workspace number 15
+    bindsym $m+Shift+1 move Workspace number 15
+
+    bindsym $m+Control+2 workspace number 20
+    bindsym $m+Control+Shift+2 move workspace number 20
+    bindsym $m+$m2+Control+2 workspace number 21
+    bindsym $m+$m2+Control+Shift+2 move workspace number 21
+    bindsym $m2+Control+2 workspace number 22
+    bindsym $m2+Control+Shift+2 move workspace number 22
+    bindsym $m2+2 workspace number 23
+    bindsym $m2+Shift+2 move workspace number 23
+    bindsym $m+$m2+2 workspace number 24
+    bindsym $m+$m2+Shift+2 move workspace number 24
+    bindsym $m+2 workspace number 25
+    bindsym $m+Shift+2 move Workspace number 25
+
+    bindsym $m+Control+3 workspace number 30
+    bindsym $m+Control+Shift+3 move workspace number 30
+    bindsym $m+$m2+Control+3 workspace number 31
+    bindsym $m+$m2+Control+Shift+3 move workspace number 31
+    bindsym $m2+Control+3 workspace number 32
+    bindsym $m2+Control+Shift+3 move workspace number 32
+    bindsym $m2+3 workspace number 33
+    bindsym $m2+Shift+3 move workspace number 33
+    bindsym $m+$m2+3 workspace number 34
+    bindsym $m+$m2+Shift+3 move workspace number 34
+    bindsym $m+3 workspace number 35
+    bindsym $m+Shift+3 move Workspace number 35
+
+    bindsym $m+Control+4 workspace number 40
+    bindsym $m+Control+Shift+4 move workspace number 40
+    bindsym $m+$m2+Control+4 workspace number 41
+    bindsym $m+$m2+Control+Shift+4 move workspace number 41
+    bindsym $m2+Control+4 workspace number 42
+    bindsym $m2+Control+Shift+4 move workspace number 42
+    bindsym $m2+4 workspace number 43
+    bindsym $m2+Shift+4 move workspace number 43
+    bindsym $m+$m2+4 workspace number 44
+    bindsym $m+$m2+Shift+4 move workspace number 44
+    bindsym $m+4 workspace number 45
+    bindsym $m+Shift+4 move Workspace number 45
+
+    bindsym $m+Control+5 workspace number 50
+    bindsym $m+Control+Shift+5 move workspace number 50
+    bindsym $m+$m2+Control+5 workspace number 51
+    bindsym $m+$m2+Control+Shift+5 move workspace number 51
+    bindsym $m2+Control+5 workspace number 52
+    bindsym $m2+Control+Shift+5 move workspace number 52
+    bindsym $m2+5 workspace number 53
+    bindsym $m2+Shift+5 move workspace number 53
+    bindsym $m+$m2+5 workspace number 54
+    bindsym $m+$m2+Shift+5 move workspace number 54
+    bindsym $m+5 workspace number 55
+    bindsym $m+Shift+5 move Workspace number 55
+
+    bindsym $m+Control+6 workspace number 60
+    bindsym $m+Control+Shift+6 move workspace number 60
+    bindsym $m+$m2+Control+6 workspace number 61
+    bindsym $m+$m2+Control+Shift+6 move workspace number 61
+    bindsym $m2+Control+6 workspace number 62
+    bindsym $m2+Control+Shift+6 move workspace number 62
+    bindsym $m2+6 workspace number 63
+    bindsym $m2+Shift+6 move workspace number 63
+    bindsym $m+$m2+6 workspace number 64
+    bindsym $m+$m2+Shift+6 move workspace number 64
+    bindsym $m+6 workspace number 65
+    bindsym $m+Shift+6 move Workspace number 65
+
+    bindsym $m+Control+7 workspace number 70
+    bindsym $m+Control+Shift+7 move workspace number 70
+    bindsym $m+$m2+Control+7 workspace number 71
+    bindsym $m+$m2+Control+Shift+7 move workspace number 71
+    bindsym $m2+Control+7 workspace number 72
+    bindsym $m2+Control+Shift+7 move workspace number 72
+    bindsym $m2+7 workspace number 73
+    bindsym $m2+Shift+7 move workspace number 73
+    bindsym $m+$m2+7 workspace number 74
+    bindsym $m+$m2+Shift+7 move workspace number 74
+    bindsym $m+7 workspace number 75
+    bindsym $m+Shift+7 move Workspace number 75
+
+    bindsym $m+Control+8 workspace number 80
+    bindsym $m+Control+Shift+8 move workspace number 80
+    bindsym $m+$m2+Control+8 workspace number 81
+    bindsym $m+$m2+Control+Shift+8 move workspace number 81
+    bindsym $m2+Control+8 workspace number 82
+    bindsym $m2+Control+Shift+8 move workspace number 82
+    bindsym $m2+8 workspace number 83
+    bindsym $m2+Shift+8 move workspace number 83
+    bindsym $m+$m2+8 workspace number 84
+    bindsym $m+$m2+Shift+8 move workspace number 84
+    bindsym $m+8 workspace number 85
+    bindsym $m+Shift+8 move Workspace number 85
+
+    bindsym $m+Control+9 workspace number 90
+    bindsym $m+Control+Shift+9 move workspace number 90
+    bindsym $m+$m2+Control+9 workspace number 91
+    bindsym $m+$m2+Control+Shift+9 move workspace number 91
+    bindsym $m2+Control+9 workspace number 92
+    bindsym $m2+Control+Shift+9 move workspace number 92
+    bindsym $m2+9 workspace number 93
+    bindsym $m2+Shift+9 move workspace number 93
+    bindsym $m+$m2+9 workspace number 94
+    bindsym $m+$m2+Shift+9 move workspace number 94
+    bindsym $m+9 workspace number 95
+    bindsym $m+Shift+9 move Workspace number 95
+
+    bindsym $m+Control+0 workspace number 100
+    bindsym $m+Control+Shift+0 move workspace number 100
+    bindsym $m+$m2+Control+0 workspace number 101
+    bindsym $m+$m2+Control+Shift+0 move workspace number 101
+    bindsym $m2+Control+0 workspace number 102
+    bindsym $m2+Control+Shift+0 move workspace number 102
+    bindsym $m2+0 workspace number 103
+    bindsym $m2+Shift+0 move workspace number 103
+    bindsym $m+$m2+0 workspace number 104
+    bindsym $m+$m2+Shift+0 move workspace number 104
+    bindsym $m+0 workspace number 105
+    bindsym $m+Shift+0 move Workspace number 105
+
+# switch between the current and the previously focused one
+workspace_auto_back_and_forth yes
+bindsym $m+b workspace back_and_forth
+bindsym $m+Shift+b move container to workspace back_and_forth
+
+#bindcode Mode_switch+43 workspace prev
+#bindcode Mode_switch+46 workspace next
+bindcode $m2+59 workspace prev
+bindcode $m2+Shift+59 move workspace prev
+
+bindcode $m2+60 workspace next
+bindcode $m2+Shift+60 move workspace next
+
+bindsym $m+r exec i3-input -F 'rename workspace to %s' -P 'New name: ' -f '-*-Terminus-bold-*-*-*-32-*-*-*-*-*-*-*'
+# reload the configuration file
+bindsym $m2+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $m2+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $m2+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym h               resize shrink left 10 px or 10 ppt
+        bindsym Shift+h         resize grow   left 10 px or 10 ppt
+
+        bindsym j               resize shrink up 2 px or 2 ppt
+#        bindsym Shift+j         resize grow   down 10 px or 10 ppt
+
+#        bindsym k               resize shrink up 10 px or 10 ppt
+        bindsym k         resize grow   up 2 px or 2 ppt
+#        bindsym Shift+k         resize grow   up 10 px or 10 ppt
+
+        bindsym l       resize shrink right 10 px or 10 ppt
+        bindsym Shift+l resize grow   right 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 10 px or 10 ppt
+        bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+
+        bindsym Down        resize shrink down 10 px or 10 ppt
+        bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+
+        bindsym Up          resize shrink up 10 px or 10 ppt
+        bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+
+        bindsym Right       resize shrink right 10 px or 10 ppt
+        bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $m2+r mode "resize"
+
+for_window [class="feh"] border normal
+for_window [class="feh"] floating enable
+for_window [class="Ddd"] border normal
+for_window [class="tool_shell"] floating enable
+for_window [class="Gvim"] border normal
+for_window [class="Gvim"] floating enable
+for_window [class="surf"] border normal
+for_window [class="surf"] floating enable
+for_window [class="libreoffice-calc"] border normal
+for_window [class="libreoffice-*"] border normal
+for_window [class="Okular"] border normal
+for_window [class="Firefox"] border normal
+for_window [class="Thunderbird"] border normal
+for_window [class="Eclipse"] border normal
+for_window [class="Wireshark"] border normal
+for_window [class="Blueman-*"] border normal
+for_window [class="Blueman-*"] floating enable
+for_window [class="Update-manager"] floating enable
+for_window [class="Update-manager"] border normal
+#for_window [class="com-ibm-staf-service-stax-.*"] floating enable
+for_window [class="com-ibm-staf-service-stax-.*"] border normal
+#for_window [name="STAX Job Monitor Machine.*"] floating disable
+for_window [class="Gimp"] border normal
+for_window [class="Gedit"] border normal
+for_window [class="Gedit"] floating enable
+
+for_window [class="surf"] border normal
+for_window [class="Skype"] border normal
+for_window [class="Skype"] floating enable
+
+for_window [class="URxvt"] floating enable
+#for_window [class="URxvt"] resize grow height 520
+
+for_window [instance="MPlayer"] floating enable
+
+##########################################k#############################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used his favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+#exec i3-config-wizard
+
+###############################
+# CONTROL CMUS thru xf86 keys #
+###############################
+
+bind 172 exec cmus-remote -u #pause/play
+bind 174 exec cmus-remote -s #stop
+bind $m2+171 exec cmus-remote -n #next
+bind $m2+173 exec cmus-remote -r #prev
+bind 171 exec cmus-remote -k +30 #seek +30
+bind 173 exec cmus-remote -k -30 #seek -30
+#bind 20 exec fsize 10
+#bind 21 exec fsize 15
+#bind 62+21 exec fsize 19
+
+# ASSIGNING
+
+#lock_screen
+bindsym $m2+Escape exec i3lock -c 000000
+bindsym $m2+F1 exec xscreensaver-command -lock
+
+#hibernate
+bindsym $m2+F11 exec i3lock -c 000000 & pmi action suspend
+bindsym $m2+F12 exec i3lock -c 000000 & pmi action hibernate
+
+# class                 border	backgr.	text	indicator
+client.focused          $c1		$c2		$c3		$c4
+
+client.focused_inactive $c5 $c6 $c7 $c8
+client.unfocused        $c9 $c10 $c11 $c12
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	status_command i3status
+	colors {
+		focused_workspace  $c1 $c2 $c3
+#		active_workspace   $c5 $c6 $c7
+#		inactive_workspace $c9 $c10 $c11
+#		urgent_workspace
+	}
+}
+
+
+bindsym $m2+F7 exec colorize.sh
+# Chwall signals
+# Add to favourite
+bindsym $m2+F8 exec sh -c '/bin/kill -SIGRTMIN `cat /tmp/chwall.pid`'
+# Skip to next
+bindsym $m2+F9 exec sh -c '/bin/kill -SIGUSR1 `cat /tmp/chwall.pid`'
+# Delete and skip to next
+bindsym $m2+F10 exec sh -c '/bin/kill -SIGUSR2 `cat /tmp/chwall.pid`'
+
