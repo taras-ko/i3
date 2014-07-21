@@ -13,14 +13,11 @@ set $c12 #311fcc
 
 exec xscreensaver
 exec xcompmgr -cn
-exec /home/x0170753/bin/chwall.sh
-exec /home/x0170753/bin/reins.sh
+exec chwall.sh
 exec urxvtd -q -o -f
 exec xset r rate 175
 exec xset b 10
 exec setxkbmap -layout us,ru,ua -variant -option grp:caps_toggle
-exec sudo update-manager
-exec reins.sh
 #exec_always colorize.sh
 
 # font for window titles. ISO 10646 = Unicode
@@ -44,7 +41,8 @@ bindsym Control+space exec /usr/bin/xsel --exchange
 
 # start a terminal
 bindsym $m2+Return exec ~/bin/urxc
-bindsym $m+Return exec ~/bin/urxc -e /bin/bash
+#bindsym $m2+Return exec  urxvtc
+#bindsym $m+Return exec ~/bin/urxc -e /bin/bash
 
 set $dir ~/bin
 #bindsym $m2+Shift+Return exec ~/bin/urxvt_indir.sh
@@ -343,6 +341,11 @@ for_window [class="Gedit"] floating enable
 for_window [class="surf"] border normal
 for_window [class="Skype"] border normal
 for_window [class="Skype"] floating enable
+for_window [class="Zoiper"] border normal
+for_window [class="Zoiper"] floating enable
+for_window [class="Linphone"] border normal
+for_window [class="Linphone"] floating enable
+for_window [class="Pgadmin3"] border normal
 
 for_window [class="URxvt"] floating enable
 #for_window [class="URxvt"] resize grow height 520
@@ -381,22 +384,22 @@ bindsym $m2+Escape exec i3lock -c 000000
 bindsym $m2+F1 exec xscreensaver-command -lock
 
 #hibernate
-bindsym $m2+F11 exec i3lock -c 000000 & pmi action suspend
+bindsym $m2+F11 exec i3lock -c 000000 & sudo systemctl suspend
 bindsym $m2+F12 exec i3lock -c 000000 & pmi action hibernate
 
 # class                 border	backgr.	text	indicator
-client.focused          $c1		$c2		$c3		$c4
+#client.focused          $c1		$c2		$c3		$c4
 
-client.focused_inactive $c5 $c6 $c7 $c8
-client.unfocused        $c9 $c10 $c11 $c12
-client.urgent           #2f343a #900000 #ffffff #900000
+#client.focused_inactive $c5 $c6 $c7 $c8
+#client.unfocused        $c9 $c10 $c11 $c12
+#client.urgent           #2f343a #900000 #ffffff #900000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	status_command i3status
 	colors {
-		focused_workspace  $c1 $c2 $c3
+#		focused_workspace  $c1 $c2 $c3
 #		active_workspace   $c5 $c6 $c7
 #		inactive_workspace $c9 $c10 $c11
 #		urgent_workspace
