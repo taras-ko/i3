@@ -11,6 +11,7 @@ set $c10 #14555e
 set $c11 #149e01
 set $c12 #311fcc
 
+exec pa-applet
 exec xscreensaver
 exec xcompmgr -cn
 exec chwall.sh
@@ -32,7 +33,7 @@ set $m2 Mod1
 
 # use Mouse+$m2 to drag floating windows to their wanted position
 floating_modifier $m2
-new_window 1pixel
+new_window normal
 hide_edge_borders vertical
 default_orientation auto
 
@@ -312,45 +313,10 @@ mode "resize" {
 
 bindsym $m2+r mode "resize"
 
-for_window [class="feh"] border normal
-for_window [class="feh"] floating enable
-for_window [class="Ddd"] border normal
-for_window [class="tool_shell"] floating enable
-for_window [class="Gvim"] border normal
-for_window [class="Gvim"] floating enable
-for_window [class="surf"] border normal
-for_window [class="surf"] floating enable
-for_window [class="libreoffice-calc"] border normal
-for_window [class="libreoffice-*"] border normal
-for_window [class="Okular"] border normal
-for_window [class="Firefox"] border normal
-for_window [class="Thunderbird"] border normal
-for_window [class="Eclipse"] border normal
-for_window [class="Wireshark"] border normal
-for_window [class="Blueman-*"] border normal
-for_window [class="Blueman-*"] floating enable
-for_window [class="Update-manager"] floating enable
-for_window [class="Update-manager"] border normal
-#for_window [class="com-ibm-staf-service-stax-.*"] floating enable
-for_window [class="com-ibm-staf-service-stax-.*"] border normal
-#for_window [name="STAX Job Monitor Machine.*"] floating disable
-for_window [class="Gimp"] border normal
-for_window [class="Gedit"] border normal
-for_window [class="Gedit"] floating enable
-
-for_window [class="surf"] border normal
-for_window [class="Skype"] border normal
-for_window [class="Skype"] floating enable
-for_window [class="Zoiper"] border normal
-for_window [class="Zoiper"] floating enable
-for_window [class="Linphone"] border normal
-for_window [class="Linphone"] floating enable
-for_window [class="Pgadmin3"] border normal
-
-for_window [class="URxvt"] floating enable
-#for_window [class="URxvt"] resize grow height 520
-
-for_window [instance="MPlayer"] floating enable
+for_window [class="[.]*"] floating enable
+for_window [class="Kmail"] floating disable
+for_window [class="Gwenview"] floating disable
+for_window [class="Firefox"] floating disable
 
 ##########################################k#############################
 # automatically start i3-config-wizard to offer the user to create a
@@ -382,6 +348,7 @@ bind 173 exec cmus-remote -k -30 #seek -30
 #lock_screen
 bindsym $m2+Escape exec i3lock -c 000000
 bindsym $m2+F1 exec xscreensaver-command -lock
+bindsym $m2+F2 exec xset dpms force off
 
 #hibernate
 bindsym $m2+F11 exec i3lock -c 000000 & sudo systemctl suspend
@@ -397,7 +364,7 @@ bindsym $m2+F12 exec i3lock -c 000000 & pmi action hibernate
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+	status_command ~/.i3/i3status.sh
 	colors {
 #		focused_workspace  $c1 $c2 $c3
 #		active_workspace   $c5 $c6 $c7
